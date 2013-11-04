@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     while ((opt = getopt(argc, argv, "hvcints")) != -1) {
         switch (opt) {
             case 'h':
-                printf("xwinfo OPTIONS WID ...\n");
+                printf("xwinfo OPTIONS [WID ...]\n");
                 return EXIT_SUCCESS;
                 break;
             case 'v':
