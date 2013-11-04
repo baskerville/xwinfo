@@ -30,10 +30,10 @@ Options
     Print the version information to standard output and exit.
 
 *-c*::
-    Print the window class name.
+    Print the class name.
 
 *-i*::
-    Print the window instance name.
+    Print the instance name.
 
 *-n*::
     Print the window title.
