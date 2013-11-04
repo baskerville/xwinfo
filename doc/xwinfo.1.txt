@@ -1,0 +1,54 @@
+:man source:   Xwinfo
+:man version:  {revnumber}
+:man manual:   Xwinfo Manual
+
+xwinfo(1)
+========
+
+Name
+----
+
+xwinfo - Print window informations
+
+Synopsis
+--------
+
+*xwinfo* _OPTIONS_ [_WID_ …]
+
+Description
+-----------
+
+xwinfo prints the informations requested by the given options regarding the window IDs given as argument.
+
+Options
+-------
+
+*-h*::
+    Print the synopsis to standard output and exit.
+
+*-v*::
+    Print the version information to standard output and exit.
+
+*-c*::
+    Print the window class name.
+
+*-i*::
+    Print the window instance name.
+
+*-n*::
+    Print the window title.
+
+*-t*::
+    Print the window type.
+
+*-s*::
+    Print the window state.
+
+Author
+------
+
+Bastien Dejean <nihilhill at gmail.com>
+
+////
+vim: set ft=asciidoc
+////
