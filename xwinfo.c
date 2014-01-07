@@ -172,6 +172,8 @@ void print_type_atom(xcb_atom_t a)
         printf("%s", "toolbar");
     else if (a == ewmh->_NET_WM_WINDOW_TYPE_MENU)
         printf("%s", "menu");
+    else if (a == ewmh->_NET_WM_WINDOW_TYPE_DIALOG)
+        printf("%s", "dialog");
     else if (a == ewmh->_NET_WM_WINDOW_TYPE_UTILITY)
         printf("%s", "utility");
     else if (a == ewmh->_NET_WM_WINDOW_TYPE_SPLASH)
