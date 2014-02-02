@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     unsigned int mask = 0;
     char opt;
 
-    while ((opt = getopt(argc, argv, "hvcints")) != -1) {
+    while ((opt = getopt(argc, argv, "hvcintsg")) != -1) {
         switch (opt) {
             case 'h':
                 printf("xwinfo OPTIONS [WID ...]\n");
@@ -40,6 +40,9 @@ int main(int argc, char *argv[])
                 break;
             case 's':
                 mask |= WINDOW_STATE;
+                break;
+            case 'g':
+                mask |= GEOMETRY;
                 break;
         }
     }
@@ -96,6 +99,8 @@ void process_window(xcb_window_t win, unsigned int mask, struct wm_cookies *cook
         cookies->window_type = xcb_ewmh_get_wm_window_type(ewmh, win);
     if (mask & WINDOW_STATE)
         cookies->window_state = xcb_ewmh_get_wm_state(ewmh, win);
+    if (mask & GEOMETRY)
+        cookies->geometry = xcb_get_geometry(dpy, win);
     if (mask & (CLASS_NAME | INSTANCE_NAME)) {
         xcb_icccm_get_wm_class_reply_t reply;
         if (xcb_icccm_get_wm_class_reply(dpy, cookies->class_instance, &reply, NULL) == 1) {
@@ -160,6 +165,14 @@ void process_window(xcb_window_t win, unsigned int mask, struct wm_cookies *cook
             printf("%s\n", MISSING_VALUE);
         }
     }
+    if (mask & GEOMETRY) {
+        xcb_get_geometry_reply_t *reply = xcb_get_geometry_reply(dpy, cookies->geometry, NULL);
+        if (reply != NULL)
+            printf("%u %u %i %i\n", reply->width, reply->height, reply->x, reply->y);
+        else
+            printf("%s %s %s %s\n", MISSING_VALUE, MISSING_VALUE, MISSING_VALUE, MISSING_VALUE);
+    }
+
 }
 
 void print_type_atom(xcb_atom_t a)

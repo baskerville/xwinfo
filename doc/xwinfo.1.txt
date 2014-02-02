@@ -44,6 +44,9 @@ Options
 *-s*::
     Print the window state.
 
+*-g*::
+    Print the geometry (as 'width height x y').
+
 Author
 ------
 

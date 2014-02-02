@@ -9,6 +9,7 @@ struct wm_cookies {
     xcb_get_property_cookie_t ewmh_name;
     xcb_get_property_cookie_t window_type;
     xcb_get_property_cookie_t window_state;
+    xcb_get_geometry_cookie_t geometry;
 };
 
 enum {
@@ -17,6 +18,7 @@ enum {
     WINDOW_NAME = 4,
     WINDOW_TYPE = 8,
     WINDOW_STATE = 16,
+    GEOMETRY = 32,
 };
 
 xcb_connection_t *dpy;
