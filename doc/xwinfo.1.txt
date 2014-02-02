@@ -24,28 +24,28 @@ Options
 -------
 
 *-h*::
-    Print the synopsis to standard output and exit.
+	Print the synopsis to standard output and exit.
 
 *-v*::
-    Print the version information to standard output and exit.
+	Print the version information to standard output and exit.
 
 *-c*::
-    Print the class name.
+	Print the class name.
 
 *-i*::
-    Print the instance name.
+	Print the instance name.
 
 *-n*::
-    Print the window title.
+	Print the window title.
 
 *-t*::
-    Print the window type.
+	Print the window type.
 
 *-s*::
-    Print the window state.
+	Print the window state.
 
 *-g*::
-    Print the geometry (as 'width height x y').
+	Print the geometry (as 'width height x y').
 
 Author
 ------
