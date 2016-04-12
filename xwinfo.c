@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 	if (cookies == NULL)
 		err("Couldn't allocate memory for cookies.\n");
 	unsigned int mask = 0;
-	char opt;
+	int opt;
 
 	while ((opt = getopt(argc, argv, "hvcintsg")) != -1) {
 		switch (opt) {
